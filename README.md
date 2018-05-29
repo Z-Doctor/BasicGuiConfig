@@ -4,6 +4,9 @@ This is not meant to be a stand alone mod, but to act as a submission of an idea
 # Creating a Config
 A config is intended to be create during the FMLPreInitializationEvent. There are two variants: EasyConfig and EasyConfigGui. EasyConfigGui is dependent on EasyConfig for functionality and handles displaying the gui to the player. After the config is created, the modder then creates Properties for that config. The config does not necessarily need a public variable, but a temporary one is needed when creating Properties. The config will also register itself to receive the ConfigChangedEvent.OnConfigChangedEvent. The intended order is to create the config, create the Properties and to call config.close(). Easy configs need the event, but can be called/stored in a class other than the Main one.
 
+# Creating a Gui Config
+Unlike the current implementation, you do not need to add any annotation type of annotation to your mod. You simple need to create a new instance of EasyGuiConfig in the same manner as a regular config. Everything else is handled behind the scenes.
+
 # Creating Properties
 Properties are the interface for retrieving the config values. There are three built-in variants: Boolean, Integer, and String. Each takes a different number/types of parameters, but in general it is EasyConfig, Category, and defaultValue. By passing the EasyConfig you created the property registers itself to the config and loads the value from the config. If no value was there previously, the default value will become the value. The current value can be obtained by calling Property.getValue(). Properties should be an accessible field for other classes, but not necessarily static.
 

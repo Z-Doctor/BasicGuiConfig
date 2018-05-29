@@ -40,6 +40,7 @@ public class ModMain {
 		proxy.postInit(e);
 	}
 
+	// A method to tell when forge is completly done
 	@EventHandler
 	public void fmlFinished(FMLLoadCompleteEvent e) {
 		if (FMLCommonHandler.instance().getSide() == Side.CLIENT) {

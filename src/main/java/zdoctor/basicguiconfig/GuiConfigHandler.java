@@ -14,6 +14,7 @@ import net.minecraftforge.fml.common.ModContainer;
 public class GuiConfigHandler {
 	protected static final Map<ModContainer, EasyConfigGui> GUIMAP = new HashMap<>();
 
+	// Adding the entries
 	public static void fmlPostInit() {
 		Field guiFactories;
 		try {
